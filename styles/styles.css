@@ -1,0 +1,110 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,700);
+body{
+    /* Esta seccion hace que se le de margen al cuerpo de la pagina, asigna la fuente roboto y le asigna fondo y color de texto */
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+	background: #333;
+	color: #fff;
+}
+header {
+    /* Aca se le asigna pading al header */
+	padding: 40px;
+}
+h1{
+    /* Este linea le agrega caracteristicas al titutlo principal */
+	font-weight: 700;
+	text-transform: uppercase;
+}
+p{
+	font-weight: 300;
+}
+a {
+	color: gray;
+}
+section {
+    /* Este es un contenedor que tiene todas las caras del dado, con display-flex se le asigna la propiedad flex-box, justify-content: 
+    centra los elementos del contenedor  */
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+/* Esta seccion de codigo que le genera a las caras de los dados sus proporciones en cuanto a margen, altura y colores y borde curvo */
+[class^="cara-"]{
+	display: flex;
+	margin: 1em;
+	width: 150px;
+	height: 150px;
+	padding: 15px;
+	background: #e6e64e;
+	border-radius: 2%;
+}
+.cara-uno{
+    /* justify-content hace que el elemento de la cara 1 quede en el centro del eje X */
+	justify-content: center;
+    /* aling-items hace que el elemento de la cara 1 quede en el centro del eje Y */
+	align-items: center;
+}
+.cara-dos{
+    /* Genera espacio entre los elementos del contenedor basado en el eje principal, el espacio entre los puntos va a ser el mismo */
+	justify-content: space-between;
+}
+/* Esta seccion le agrega el punto y la cantidad que deben ir, en este caso 2 */
+.cara-dos .punto:nth-child(2){
+    /* Esta parte hace que el punto 2 se direccione al borde inferior o final del contenedor */
+	align-self: flex-end;
+}
+.cara-tres{
+    /* Genera espacio entre los elementos del contenedor basado en el eje X, el espacio entre los puntos va a ser el mismo */
+	justify-content: space-between;
+}
+.cara-tres .punto:nth-child(2){
+    /* Alinea el segundo punto sobre la mitad del eje Y */
+	align-self: center; 
+}
+.cara-tres .punto:nth-child(3){
+	align-self: flex-end;
+}
+.cara-cuatro{
+	justify-content: space-between;
+}
+.cara-cuatro .columna {
+    /* Se le asigna la propiedad de flex-box a la cara 4 */
+	display: flex;
+    /* En esta linea se posiciona un elemento al lado del otro o en columnas */
+	flex-direction: column;
+	justify-content: space-between;
+}
+.cara-cinco{
+    /* Se le asigna la propiedad de flex-box a la cara 5 */
+	display: flex;
+    /* Ele espacio que se distribuye entre los elementos */
+	justify-content: space-between;
+}
+.cara-cinco .columna {
+	display: flex;
+     /* En esta linea se posiciona un elemento al lado del otro o en columnas */
+	flex-direction: column;
+	justify-content: space-between;
+}
+.cara-cinco .medio{
+    /* Esta linea centra el punnto medio sobre el eje Y a la mitad */
+	align-self: center;
+}
+.cara-seis{
+	display: flex;
+	justify-content: space-between;
+}
+.cara-seis .columna{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.punto {
+    /* En esta seccion del codigo se le asigna propiedades como el ancho, alto, forma y color de puntos */
+	width: 20px;
+	height: 25px;
+	border-radius: 25%;
+	background: rgb(35, 2, 249);
+	box-shadow: inset 0 3px #111111, inset 0 -3px #555;
+}
